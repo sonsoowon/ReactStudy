@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Hello from './Hello';
+import Wrapper from './Wrapper';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <Hello isSpecial/>
+      <Hello color={"pink"} name={"수원"} isSpecial={true}/>
+    </Wrapper>
   );
+
+  /* props
+    - Wrapper 컴포넌트에서 props.children 조회 시 태그 사이의 Hello 컴포넌트를 렌더링한다.
+    - isSpecial 과 isSpecial={true} 는 동일한 의미이다.
+   */
 }
 
 export default App;
