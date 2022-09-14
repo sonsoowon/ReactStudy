@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 
 const InputSample = () => {
     
@@ -26,13 +26,16 @@ const InputSample = () => {
         });
     }
 
-
+    /* useRef */
+    // Ref 객체 생성 후 특정 DOM의 ref로 설정하면 Ref 객체의 .current 를 이용해 해당 DOM에 접근할 수 있다.
+    const nameInput = useRef();
 
     const onReset = () => {
         setInputs({
             name: '',
             nickname: ''
         });
+        nameInput.current.focus(); // DOM API focus() 호출
     }
 
     
@@ -45,6 +48,7 @@ const InputSample = () => {
                 placeholder="이름"
                 value={name}
                 onChange={onChange}
+                ref={nameInput} // Ref 객체가 이 DOM을 가리키도록 ref 값 설정
             />
 
             <input
