@@ -1,4 +1,5 @@
 import Hello from './Hello';
+import InputSample from './InputSample';
 import Wrapper from './Wrapper';
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
     <Wrapper>
       <Hello isSpecial/>
       <Hello color={"pink"} name={"수원"} isSpecial={true}/>
+      <InputSample/>
     </Wrapper>
   );
 
